@@ -1,0 +1,534 @@
+/* 成员守则页面样式 */
+
+/* 英雄区域样式 */
+.rules-hero {
+    /* 移除背景图片，让网格背景可见 */
+    background: none;
+    padding-top: 120px;
+    min-height: 50vh;
+}
+
+/* 守则部分通用样式 */
+.rules-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.rules-section h2 {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 2.5rem;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.rules-section h2::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color);
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 守则介绍区域 */
+.rules-overview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.rules-overview-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.rules-overview-content p {
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+.rules-overview-image {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px var(--shadow-color);
+}
+
+.rules-overview-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.rules-overview-image img:hover {
+    transform: scale(1.02);
+}
+
+/* 基本原则样式 */
+.rules-principles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 60px;
+}
+
+.principle-item {
+    position: relative;
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    padding: 1.8rem;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.principle-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px var(--shadow-color);
+}
+
+/* 卡片光晕效果 */
+.principle-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--card-glow-color) 0%, transparent 60%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 0;
+}
+
+.principle-item:hover::before {
+    opacity: 1;
+}
+
+.principle-item .icon {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 193, 7, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.principle-item .icon span {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.principle-item h3 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    position: relative;
+    z-index: 1;
+}
+
+.principle-item p {
+    color: var(--text-color);
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+/* 工作流程规范样式 */
+.workflow-rules {
+    margin-bottom: 60px;
+}
+
+.workflow-item {
+    position: relative;
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.workflow-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 15px 30px var(--shadow-color);
+}
+
+/* 工作流程卡片光晕效果 */
+.workflow-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--card-glow-color) 0%, transparent 60%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 0;
+}
+
+.workflow-item:hover::before {
+    opacity: 1;
+}
+
+.workflow-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.workflow-item ol {
+    margin-left: 1.5rem;
+    color: var(--text-color);
+    position: relative;
+    z-index: 1;
+}
+
+.workflow-item li {
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+}
+
+/* 行为规范样式 */
+.behavior-rules {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 60px;
+}
+
+.behavior-item {
+    position: relative;
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.behavior-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px var(--shadow-color);
+}
+
+/* 行为规范卡片光晕效果 */
+.behavior-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--card-glow-color) 0%, transparent 60%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 0;
+}
+
+.behavior-item:hover::before {
+    opacity: 1;
+}
+
+.behavior-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.behavior-item h3::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.behavior-item ul {
+    position: relative;
+    z-index: 1;
+}
+
+.behavior-item li {
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+}
+
+/* 奖惩制度样式 */
+.reward-punishment {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 60px;
+}
+
+.reward-item, .punishment-item {
+    position: relative;
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.reward-item:hover, .punishment-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px var(--shadow-color);
+}
+
+/* 奖惩制度卡片光晕效果 */
+.reward-item::before, .punishment-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--card-glow-color) 0%, transparent 60%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 0;
+}
+
+.reward-item:hover::before, .punishment-item:hover::before {
+    opacity: 1;
+}
+
+.reward-item h3, .punishment-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+    position: relative;
+    z-index: 1;
+}
+
+.reward-item p, .punishment-item p {
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.reward-item ul, .punishment-item ul {
+    position: relative;
+    z-index: 1;
+}
+
+.reward-item li, .punishment-item li {
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+}
+
+.reward-item strong, .punishment-item strong {
+    color: var(--primary-color);
+}
+
+/* 加入流程样式 */
+.join-process {
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.process-step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.process-step:hover {
+    transform: translateX(10px);
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 2rem;
+    flex-shrink: 0;
+}
+
+.step-content {
+    position: relative;
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.step-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px var(--shadow-color);
+}
+
+/* 加入流程卡片光晕效果 */
+.step-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--card-glow-color) 0%, transparent 60%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 0;
+}
+
+.step-content:hover::before {
+    opacity: 1;
+}
+
+.step-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.step-content p {
+    color: var(--text-color);
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .rules-section {
+        padding: 3rem 1.5rem;
+    }
+    
+    .rules-principles {
+        grid-template-columns: 1fr;
+    }
+    
+    .behavior-rules {
+        grid-template-columns: 1fr;
+    }
+    
+    .reward-punishment {
+        grid-template-columns: 1fr;
+    }
+    
+    .join-process::before {
+        display: none;
+    }
+    
+    .process-step {
+        flex-direction: column;
+    }
+    
+    .step-number {
+        margin-bottom: 1rem;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .rules-section h2 {
+        font-size: 2rem;
+    }
+    
+    .principle-item, 
+    .workflow-item,
+    .behavior-item, 
+    .reward-item, 
+    .punishment-item {
+        padding: 1.5rem;
+    }
+}
+
+/* 卡片统一效果 */
+.project-card,
+.mod-card,
+.member-card,
+.research-item {
+    position: relative;
+    background-color: var(--card-bg-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    box-shadow: 0 0 0 transparent;
+}
+
+.project-card:hover,
+.mod-card:hover,
+.member-card:hover,
+.research-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+.project-card::before,
+.mod-card::before,
+.member-card::before,
+.research-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--card-glow-color) 0%, transparent 60%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 0;
+}
+
+.project-card:hover::before,
+.mod-card:hover::before,
+.member-card:hover::before,
+.research-item:hover::before {
+    opacity: 1;
+} 

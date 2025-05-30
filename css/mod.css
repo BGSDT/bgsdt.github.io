@@ -1,0 +1,793 @@
+/* 资源分享页面特定样式 */
+.mod-hero {
+    padding-top: 120px;
+    min-height: 50vh;
+}
+
+.mod-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mod-section h2 {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 2.5rem;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.mod-section h2::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color);
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mod-overview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.mod-overview-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.mod-overview-content p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.mod-overview-image {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px var(--shadow-color);
+}
+
+.mod-overview-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 资源导航栏 */
+.mod-nav-section {
+    padding-top: 0;
+    padding-bottom: 20px;
+}
+
+.mod-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.mod-nav-item {
+    padding: 10px 20px;
+    background-color: var(--card-bg-color);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.mod-nav-item:hover {
+    background-color: var(--border-color);
+}
+
+.mod-nav-item.active {
+    background-color: var(--primary-color);
+    color: #000;
+}
+
+/* 资源卡片网格 */
+.mod-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/* 资源卡片样式 */
+.mod-card {
+    position: relative;
+    background-color: var(--card-bg-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    cursor: pointer;
+}
+
+.mod-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px var(--shadow-color);
+}
+
+/* 资源卡片光晕效果 */
+.mod-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--card-glow-color) 0%, transparent 60%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 0;
+}
+
+.mod-card:hover::before {
+    opacity: 1;
+}
+
+.mod-card-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.mod-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.mod-card:hover .mod-card-image img {
+    transform: scale(1.05);
+}
+
+.mod-card-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 10px;
+    background-color: var(--primary-color);
+    color: #000;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.mod-card-badge.new {
+    background-color: #4caf50;
+    color: white;
+}
+
+.mod-card-content {
+    position: relative;
+    padding: 20px;
+    z-index: 2;
+}
+
+.mod-card-content h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.mod-card-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.mod-card-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 13px;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.mod-card-meta span {
+    display: flex;
+    align-items: center;
+}
+
+.mod-card-meta span i {
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.mod-card-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.mod-card-actions a {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.download-btn {
+    background-color: var(--primary-color);
+    color: #000;
+    flex: 1;
+}
+
+.download-btn:hover {
+    background-color: #e6ac00;
+}
+
+.details-btn {
+    background-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.details-btn:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+
+/* 更新计划时间线 */
+.update-timeline {
+    margin-top: 50px;
+    position: relative;
+}
+
+.update-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 120px;
+    width: 2px;
+    background-color: var(--border-color);
+    z-index: 0;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 120px;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.timeline-date {
+    width: 100px;
+    text-align: right;
+    padding-right: 30px;
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+.timeline-date span {
+    display: block;
+    font-weight: bold;
+}
+
+.timeline-date span:first-child {
+    font-size: 20px;
+}
+
+.timeline-content {
+    width: calc(100% - 100px);
+    padding-left: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* 响应式样式 */
+@media (max-width: 768px) {
+    .mod-overview {
+        flex-direction: column;
+    }
+    
+    .mod-section h2 {
+        font-size: 36px;
+    }
+    
+    .mod-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .update-timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+    }
+    
+    .timeline-item::before {
+        left: 30px;
+    }
+    
+    .timeline-date {
+        width: 100%;
+        text-align: left;
+        padding-left: 60px;
+        padding-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .timeline-content {
+        width: 100%;
+        padding-left: 60px;
+    }
+    
+    .mod-card {
+        max-width: 450px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .mod-nav-item {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+    
+    .timeline-date span:first-child {
+        font-size: 18px;
+    }
+    
+    .timeline-content h3 {
+        font-size: 18px;
+    }
+}
+
+/* 添加空状态样式 */
+.empty-state {
+    text-align: center;
+    margin: 40px 0;
+    padding: 30px;
+    background-color: var(--card-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.empty-state i {
+    font-size: 60px;
+    display: block;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    opacity: 0.5;
+}
+
+.empty-state h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.empty-state p {
+    font-size: 16px;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.end-message {
+    text-align: center;
+    margin: 30px 0;
+    color: var(--text-color);
+    opacity: 0.6;
+    font-size: 14px;
+}
+
+/* 加载器样式 */
+.mod-loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.loader-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(var(--primary-color-rgb), 0.3);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* 通知样式 */
+.notification-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.notification {
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    margin-top: 10px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateX(120%);
+    transition: transform 0.3s ease;
+    max-width: 300px;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification.success {
+    border-left: 4px solid #4caf50;
+}
+
+.notification.info {
+    border-left: 4px solid #2196f3;
+}
+
+.notification.warning {
+    border-left: 4px solid #ff9800;
+}
+
+.notification.error {
+    border-left: 4px solid #f44336;
+} 
+
+/* 支持与教程部分 */
+.support-section {
+    background-color: rgba(var(--primary-color-rgb, 255, 193, 7), 0.05);
+    border-radius: 15px;
+    padding: 60px 40px;
+    margin: 40px auto;
+}
+
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.support-card {
+    display: flex;
+    background-color: var(--card-bg-color);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 8px 20px var(--shadow-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.support-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px var(--shadow-color);
+}
+
+.support-icon {
+    background-color: var(--primary-color);
+    color: #000;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.support-icon .material-symbols-outlined {
+    font-size: 30px;
+}
+
+.support-content {
+    flex: 1;
+}
+
+.support-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.support-content p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.support-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.support-link {
+    display: flex;
+    align-items: center;
+    background-color: var(--border-color);
+    color: var(--text-color);
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.support-link:hover {
+    background-color: var(--primary-color);
+    color: #000;
+}
+
+.support-link .material-symbols-outlined {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+/* 常见问题部分 */
+.faq-section {
+    padding: 60px 40px;
+    margin: 40px auto;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 40px auto 0;
+}
+
+.faq-item {
+    background-color: var(--card-bg-color);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background-color: rgba(var(--primary-color-rgb, 255, 193, 7), 0.05);
+}
+
+.faq-question h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.faq-question .material-symbols-outlined {
+    transition: transform 0.3s;
+}
+
+.faq-item.active .material-symbols-outlined {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    padding: 0 20px 20px;
+    max-height: 500px;
+}
+
+.faq-answer p {
+    line-height: 1.6;
+    font-size: 15px;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+/* 用户反馈部分 */
+.feedback-section {
+    background-color: rgba(var(--primary-color-rgb, 255, 193, 7), 0.05);
+    border-radius: 15px;
+    padding: 60px 40px;
+    margin: 40px auto;
+}
+
+.feedback-container {
+    max-width: 800px;
+    margin: 30px auto 0;
+    text-align: center;
+}
+
+.feedback-container p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.feedback-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.feedback-button {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.feedback-button:hover {
+    background-color: var(--primary-color);
+    color: #000;
+    transform: translateY(-3px);
+}
+
+.feedback-button .material-symbols-outlined {
+    margin-right: 10px;
+}
+
+/* 改进的页脚样式 */
+footer {
+    background-color: var(--card-bg-color);
+    padding: 60px 0 20px;
+    margin-top: 60px;
+    box-shadow: 0 -5px 20px var(--shadow-color);
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.footer-info {
+    flex: 1;
+    min-width: 250px;
+    margin-right: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-logo {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.footer-logo span {
+    color: var(--primary-color);
+}
+
+.footer-info p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-links-group {
+    min-width: 150px;
+}
+
+.footer-links-group h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.footer-links-group ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links-group ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links-group ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.8;
+    transition: opacity 0.3s, color 0.3s;
+}
+
+.footer-links-group ul li a:hover {
+    color: var(--primary-color);
+    opacity: 1;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+    .support-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .footer-info {
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+    
+    .footer-links {
+        gap: 20px;
+    }
+    
+    .feedback-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .faq-question h3 {
+        font-size: 16px;
+    }
+} 
