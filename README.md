@@ -1,1 +1,39 @@
-# bgsdt.github.io
+# 北咕工艺(BeiguCraft)官方网站
+
+## 项目简介
+
+北咕工艺(BeiguCraft)是一个专注于迷你世界城建与轨道交通的创作团队。本网站作为团队官方平台，展示团队作品、分享资源、介绍团队成员并公布团队守则。
+
+## 网站结构
+
+网站包含四个主要页面：
+
+1. **主页(index.html)** - 网站首页，展示团队概述和作品展示
+2. **资源分享(mod.html)** - 提供团队制作的地铁资源包等内容下载
+3. **团队介绍(team.html)** - 详细介绍团队成员和研究方向
+4. **成员守则(rules.html)** - 说明团队工作流程和行为规范
+
+## 功能特点
+
+- **响应式设计** - 适配各种屏幕尺寸的设备
+- **暗色/亮色主题** - 支持主题切换，自动适应系统主题偏好
+- **资源下载** - 提供地铁资源包和附属美术资源
+- **团队展示** - 展示团队成员和作品集
+- **教程链接** - 提供抖音教程账号链接
+
+## 技术实现
+
+- 纯HTML/CSS/JavaScript实现
+- 无需后端服务器支持
+- 采用现代CSS技术（Flex/Grid布局、变量等）
+- 使用Google Material Symbols图标
+
+## 联系方式
+
+- 官方社区：[QQ群](https://qm.qq.com/q/nySNoVPd0k)
+- 抖音账号1：[北咕](https://www.douyin.com/user/MS4wLjABAAAArPM_XYxKRoQvoYD09S3baXWSX12Tx0Gyv9NPQ2Q3vT-JoA2a1aVadfW_ePrIpa7D)
+- 抖音账号2：[迷你世界交通](https://www.douyin.com/user/MS4wLjABAAAAxxbWERL3Qb0Gbyd-5_AC5JAqLwK-Vgh21Lfs8I_svtOAfZ15NO89Ki5kiCJ0DaQv)
+
+## 版权信息
+
+© 2025 北咕工艺(BeiguCraft) - 保留所有权利
