@@ -1,38 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 主题切换
-    const themeToggle = document.querySelector('.theme-toggle');
-    const body = document.body;
-    
-    // 检查本地存储中的主题设置
-    const currentTheme = localStorage.getItem('theme');
-    if (currentTheme) {
-        body.classList.add(currentTheme);
-        updateThemeIcon(currentTheme === 'dark-theme');
-    }
-    
-    // 主题切换按钮点击事件
-    themeToggle.addEventListener('click', () => {
-        if (body.classList.contains('dark-theme')) {
-            body.classList.remove('dark-theme');
-            localStorage.setItem('theme', '');
-            updateThemeIcon(false);
-        } else {
-            body.classList.add('dark-theme');
-            localStorage.setItem('theme', 'dark-theme');
-            updateThemeIcon(true);
-        }
-    });
-    
-    // 更新主题图标
-    function updateThemeIcon(isDark) {
-        const themeIcon = themeToggle.querySelector('.material-symbols-outlined');
-        if (isDark) {
-            themeIcon.textContent = 'light_mode';
-        } else {
-            themeIcon.textContent = 'dark_mode';
-        }
-    }
-    
     // 平滑滚动到锚点
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {

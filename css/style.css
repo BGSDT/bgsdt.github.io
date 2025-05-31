@@ -133,7 +133,7 @@ nav ul li a:hover::after {
 
 /* 菜单按钮样式 */
 .menu-toggle {
-    display: none;
+    display: none !important;
 }
 
 /* 搜索框样式 */
@@ -571,7 +571,9 @@ nav ul li a:hover::after {
 
 @media (max-width: 768px) {
     .menu-toggle {
-        display: flex;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
     }
     
     nav {

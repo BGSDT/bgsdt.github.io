@@ -195,10 +195,10 @@ function addSearchBoxStyle() {
             
             .search-box input {
                 flex: 1;
-                padding: 12px 20px;
+                padding: 8px 15px;
                 border: none;
                 outline: none;
-                font-size: 16px;
+                font-size: 14px;
                 background-color: transparent;
                 color: var(--text-color);
             }
@@ -207,9 +207,12 @@ function addSearchBoxStyle() {
                 background-color: var(--primary-color);
                 border: none;
                 color: #000;
-                padding: 0 20px;
+                padding: 0 15px;
                 cursor: pointer;
                 transition: background-color 0.3s;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
             
             .search-box button:hover {

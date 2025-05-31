@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
     // 添加滚动到顶部按钮
     const topBtn = document.createElement('div');
     topBtn.className = 'top-btn';
@@ -196,13 +196,13 @@ function initTheme() {
             body.classList.remove('dark-theme');
             themeToggle.querySelector('.material-symbols-outlined').textContent = 'dark_mode';
         }
-    } else {
+        } else {
         // 默认使用浅色主题
         body.setAttribute('data-theme', 'light');
         body.classList.remove('dark-theme');
         localStorage.setItem('theme', 'light');
         themeToggle.querySelector('.material-symbols-outlined').textContent = 'dark_mode';
-    }
+        }
     
     // 确保所有卡片应用正确的样式
     applyCardStyles();
