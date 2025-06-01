@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // 初始化P2P轮播效果
     initP2PCarousel();
     
+    // 初始化弹跳轮播效果
+    initBounceCarousel();
+    
     // 初始化图片画廊
     initGallery();
     
@@ -280,6 +283,83 @@ function initP2PCarousel() {
     
     // 设置轮播间隔
     setInterval(rotateP2PItems, 3000);
+    
+    // 监听窗口大小变化时重新调整
+    window.addEventListener('resize', adjustCarouselWidth);
+}
+
+/**
+ * 初始化弹跳轮播效果
+ */
+function initBounceCarousel() {
+    const bounceCarousel = document.querySelector('.bounce-carousel');
+    if (!bounceCarousel) return;
+    
+    const bounceItems = bounceCarousel.querySelectorAll('.bounce-item');
+    let currentIndex = 0;
+    
+    // 调整轮播容器宽度以适应当前活动项
+    function adjustCarouselWidth() {
+        // 创建一个临时的 span 元素来测量当前活动项的内容宽度
+        const tempSpan = document.createElement('span');
+        tempSpan.style.visibility = 'hidden';
+        tempSpan.style.position = 'absolute';
+        tempSpan.style.whiteSpace = 'nowrap';
+        tempSpan.style.fontSize = window.getComputedStyle(bounceItems[currentIndex]).fontSize;
+        tempSpan.style.fontFamily = window.getComputedStyle(bounceItems[currentIndex]).fontFamily;
+        tempSpan.style.fontWeight = window.getComputedStyle(bounceItems[currentIndex]).fontWeight;
+        tempSpan.innerText = bounceItems[currentIndex].innerText;
+        
+        // 添加到文档以测量
+        document.body.appendChild(tempSpan);
+        
+        // 获取内容宽度并添加一些额外的填充
+        const contentWidth = tempSpan.offsetWidth + 30; // 30px 额外的填充
+        
+        // 设置最小宽度
+        const minWidth = 80;
+        const finalWidth = Math.max(contentWidth, minWidth);
+        
+        // 应用到轮播容器
+        bounceCarousel.style.width = `${finalWidth}px`;
+        
+        // 清理临时元素
+        document.body.removeChild(tempSpan);
+    }
+    
+    // 初始调整
+    adjustCarouselWidth();
+    
+    function rotateBounceItems() {
+        // 将当前活动项设置为"previous"类
+        bounceItems[currentIndex].classList.remove('active');
+        bounceItems[currentIndex].classList.add('previous');
+        
+        // 更新索引到下一项
+        currentIndex = (currentIndex + 1) % bounceItems.length;
+        
+        // 先将下一项设为活动状态（用于测量宽度），但保持过渡前的状态
+        bounceItems[currentIndex].classList.add('active');
+        bounceItems[currentIndex].style.transform = 'translateY(100%)';
+        bounceItems[currentIndex].style.opacity = '0';
+        
+        // 调整轮播容器宽度
+        adjustCarouselWidth();
+        
+        // 延迟后移除"previous"类并完成显示新项的过渡
+        setTimeout(() => {
+            document.querySelectorAll('.bounce-item.previous').forEach(item => {
+                item.classList.remove('previous');
+            });
+            
+            // 重置内联样式，让 CSS 类控制显示
+            bounceItems[currentIndex].style.transform = '';
+            bounceItems[currentIndex].style.opacity = '';
+        }, 300);
+    }
+    
+    // 设置轮播间隔
+    setInterval(rotateBounceItems, 3000);
     
     // 监听窗口大小变化时重新调整
     window.addEventListener('resize', adjustCarouselWidth);
