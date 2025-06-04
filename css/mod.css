@@ -214,37 +214,97 @@
 
 .mod-card-actions {
     display: flex;
+    flex-direction: column;
     gap: 10px;
 }
 
 .mod-card-actions a {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 8px 16px;
     border-radius: 5px;
     font-size: 14px;
     text-decoration: none;
     text-align: center;
     transition: all 0.3s;
+    line-height: 1;
+    height: 36px;
+    box-sizing: border-box;
 }
 
+.mod-card-actions a .material-symbols-outlined {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 6px;
+    font-size: 18px;
+    line-height: 1;
+}
+
+/* 查看详情按钮样式 */
+.details-btn {
+    background-color: var(--border-color);
+    color: var(--text-color);
+    width: 100%;
+}
+
+.details-btn:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+
+/* 下载按钮样式 */
 .download-btn {
     background-color: var(--primary-color);
     color: #000;
-    flex: 1;
+    width: 100%;
 }
 
 .download-btn:hover {
     background-color: #e6ac00;
 }
 
-.details-btn {
-    background-color: var(--border-color);
-    color: var(--text-color);
+/* 教程账号按钮样式 */
+.support-link {
+    background-color: var(--primary-color);
+    color: #000;
 }
 
-.details-btn:hover {
-    background-color: var(--text-color);
-    color: var(--background-color);
+.support-link:hover {
+    background-color: #e6ac00;
+}
+
+/* 教程账号按钮容器 */
+.tutorial-links {
+    display: flex;
+    gap: 10px;
+}
+
+/* 教程账号按钮在同一行显示 */
+.mod-card .tutorial-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.mod-card .tutorial-links a {
+    flex: 1;
+}
+
+.full-width-btn {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.tutorial-actions {
+    justify-content: space-between;
+}
+
+.tutorial-actions a {
+    flex: 1;
+    justify-content: center;
 }
 
 /* 更新计划时间线 */
@@ -537,30 +597,37 @@
 
 .support-links {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 10px;
+    margin-top: 15px;
 }
 
-.support-link {
-    display: flex;
+.support-content .support-link {
+    display: inline-flex;
     align-items: center;
-    background-color: var(--border-color);
-    color: var(--text-color);
-    padding: 10px 15px;
-    border-radius: 8px;
+    justify-content: center;
+    padding: 8px 16px;
+    background-color: var(--card-bg-color);
+    border-radius: 5px;
     text-decoration: none;
+    color: var(--text-color);
     font-size: 14px;
     transition: all 0.3s;
+    line-height: 1;
 }
 
-.support-link:hover {
-    background-color: var(--primary-color);
-    color: #000;
-}
-
-.support-link .material-symbols-outlined {
+.support-content .support-link .material-symbols-outlined {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-right: 8px;
     font-size: 18px;
+    line-height: 1;
+}
+
+.support-content .support-link:hover {
+    background-color: var(--primary-color);
+    color: #000;
 }
 
 /* 常见问题部分 */
@@ -655,26 +722,31 @@
 }
 
 .feedback-button {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    background-color: var(--card-bg-color);
-    color: var(--text-color);
-    padding: 12px 25px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: all 0.3s;
-    box-shadow: 0 4px 12px var(--shadow-color);
-}
-
-.feedback-button:hover {
+    justify-content: center;
+    padding: 12px 24px;
     background-color: var(--primary-color);
     color: #000;
-    transform: translateY(-3px);
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    box-shadow: 0 3px 10px var(--shadow-color);
+    line-height: 1;
 }
 
 .feedback-button .material-symbols-outlined {
-    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    font-size: 20px;
+    line-height: 1;
+}
+
+.feedback-button:hover {
+    background-color: #e6ac00;
 }
 
 /* 改进的页脚样式 */
@@ -790,4 +862,23 @@ footer {
     .faq-question h3 {
         font-size: 16px;
     }
+} 
+
+/* 调整第一个产品卡片的按钮布局 */
+.mod-card-actions.tutorial-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.mod-card-actions.tutorial-actions a {
+    flex: 1;
+    justify-content: center;
+    padding: 8px 10px;
+    font-size: 13px;
+}
+
+.mod-card-actions.tutorial-actions .material-symbols-outlined {
+    font-size: 16px;
 } 

@@ -868,6 +868,65 @@ nav ul li a:hover::after {
     line-height: 1.6;
 }
 
+/* 恢复原有的项目链接样式 */
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 15px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.project-link:hover {
+    opacity: 0.8;
+}
+
+.project-link .material-symbols-outlined {
+    font-size: 18px;
+    margin-left: 5px;
+    transition: transform 0.3s;
+}
+
+.project-link:hover .material-symbols-outlined {
+    transform: translateX(5px);
+}
+
+/* 首页卡片按钮样式 */
+.card-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    color: #000;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    height: 42px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.card-button:hover {
+    background-color: #e6ac00;
+    transform: translateY(-3px);
+}
+
+.card-button .material-symbols-outlined {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+    font-size: 18px;
+    line-height: 1;
+}
+
 /* 页脚 */
 footer {
     background-color: var(--card-bg-color);
