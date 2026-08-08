@@ -18,9 +18,25 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: '开始', link: '/docs/guide/' },
-          { text: '开发成员', link: '/docs/guide/team' }
+          { text: '开发成员', link: '/docs/guide/team' },
+          { text: '指路官方', link: '/docs/guide/contact' }
         ]
-      }
+      },
+      {
+        text: '云北城建',
+        collapsed: false,
+        items: [
+          { text: '开始', link: '/docs/yunbeiuc/' }
+        ]
+      },
+      {
+        text: '云北城建：豹猫指示牌',
+        collapsed: false,
+        items: [
+          { text: '开始', link: '/docs/ocelotsignyunbei/' },
+          { text: '资源包制作', link: '/docs/ocelotsignyunbei/resource_pack' },
+        ]
+      },
     ],
 
     docFooter: {
@@ -33,7 +49,7 @@ export default defineConfig({
     darkModeSwitchLabel: '外观',
 
     editLink: {
-      pattern: `https://github.com/Corona-Studio/docs/edit/main/:path`,
+      pattern: `https://github.com/BGSDT/bgsdt.github.io/edit/main/:path`,
       text: '在 GitHub 上编辑此页',
     },
 
@@ -62,7 +78,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/BGSDT/bgsdt.github.io' }
     ]
   }
 })
