@@ -40,6 +40,15 @@ const members_1 = [
     ]
   },
   {
+    avatar: 'https://i.mcmod.cn/user/avatar/68/686012/686012_1747403022_VWtb.png',
+    name: 'Yomi_307',
+    title: '贡献者',
+    links: [
+      { icon: 'github', link: 'https://github.com/yomi-china' },
+      { icon: 'modrinth', link: 'https://modrinth.com/user/yomi_307' }
+    ]
+  },
+  {
     avatar: 'https://i.mcmod.cn/user/avatar/112/1120453/1120453_1747470177_ZplP.png',
     name: '提蒸蟹',
     title: '贡献者',
@@ -54,20 +63,13 @@ const members_1 = [
     title: '贡献者'
   },
   {
-    avatar: 'https://i.mcmod.cn/user/avatar/141/1411561/1411561_1778928953_SslC.png',
-    name: 'CR400BF_G_5133',
-    title: '贡献者',
+    avatar: 'https://i.mcmod.cn/user/avatar/103/1037533/1037533_1788714572_pYzP.png',
+    name: '豹猫苦力怕可乐',
+    title: '贡献者'
     links: [
-      { icon: 'bilibili', link: 'https://space.bilibili.com/573827263/' }
-    ]
-  },
-  {
-    avatar: 'https://i.mcmod.cn/user/avatar/68/686012/686012_1747403022_VWtb.png',
-    name: 'Yomi_307',
-    title: '贡献者',
-    links: [
-      { icon: 'github', link: 'https://github.com/yomi-china' },
-      { icon: 'modrinth', link: 'https://modrinth.com/user/yomi_307' }
+      { icon: 'github', link: 'https://github.com/Creeper-Cola123' },
+      { icon: 'modrinth', link: 'https://modrinth.com/user/OcelotCreeperCola' },
+      { icon: 'bilibili', link: 'https://space.bilibili.com/226720371' }
     ]
   }
 ]
@@ -87,7 +89,7 @@ const members_2 = [
       开发成员
     </template>
     <template #lead>
-     云北团队是专注于开发 Minecraft 城市建设类模组以及城市建设的团队，由社区爱好者组成的社区团队。
+     云北社区团队是专注于开发 Minecraft 城市建设类模组以及城市建设的团队，由社区爱好者组成的社区团队。
     </template>
   </VPTeamPageTitle>
   <VPTeamPageSection>
