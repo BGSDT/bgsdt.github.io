@@ -65,7 +65,7 @@ const members_1 = [
   {
     avatar: 'https://i.mcmod.cn/user/avatar/103/1037533/1037533_1788714572_pYzP.png',
     name: '豹猫苦力怕可乐',
-    title: '贡献者'
+    title: '贡献者',
     links: [
       { icon: 'github', link: 'https://github.com/Creeper-Cola123' },
       { icon: 'modrinth', link: 'https://modrinth.com/user/OcelotCreeperCola' },
