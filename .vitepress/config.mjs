@@ -19,14 +19,17 @@ export default defineConfig({
         items: [
           { text: '开始', link: '/docs/guide/' },
           { text: '开发成员', link: '/docs/guide/team' },
-          { text: '指路官方', link: '/docs/guide/contact' }
+          { text: '指路官方', link: '/docs/guide/contact' },
+          { text: '友情链接', link: '/docs/guide/links' }
         ]
       },
       {
         text: '云北城建',
         collapsed: false,
         items: [
-          { text: '开始', link: '/docs/yunbeiuc/' }
+          { text: '开始', link: '/docs/yunbeiuc/' },
+          { text: '道旗资源包', link: '/docs/yunbeiuc/flag_resource_pack' },
+          { text: '图案与字体资源包', link: '/docs/yunbeiuc/pattern_font_resource_pack' }
         ]
       },
       {
