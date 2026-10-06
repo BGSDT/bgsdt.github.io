@@ -12,7 +12,7 @@ hero:
       link: /docs/guide/
     - theme: alt
       text: 联系我们
-      link: /zhCN/guide/contact
+      link: /docs/guide/contact
 
 features:
   - icon: 📘
