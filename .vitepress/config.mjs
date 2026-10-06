@@ -38,6 +38,7 @@ export default defineConfig({
         items: [
           { text: '开始', link: '/docs/ocelotsignyunbei/' },
           { text: '资源包制作', link: '/docs/ocelotsignyunbei/resource_pack' },
+          { text: '疑难解答', link: '/docs/ocelotsignyunbei/faq' },
         ]
       },
     ],
