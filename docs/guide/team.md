@@ -49,6 +49,14 @@ const members_1 = [
     ]
   },
   {
+    avatar: 'https://i.mcmod.cn/user/avatar/19/197959/197959_1790955859_RpAM.png',
+    name: 'HulanSB',
+    title: '程序',
+    links: [
+      { icon: 'github', link: 'https://github.com/Hulan1234/' }
+    ]
+  },
+  {
     avatar: 'https://i.mcmod.cn/user/avatar/112/1120453/1120453_1747470177_ZplP.png',
     name: '提蒸蟹',
     title: '贡献者',
@@ -78,7 +86,7 @@ const members_2 = [
   {
     avatar: 'https://i.mcmod.cn/author/avatar/github/1782665736_ttwMUcxI.png',
     name: 'Itz_NanGua',
-    title: '贡献者'
+    title: '开发者'
   }
 ]
 </script>
